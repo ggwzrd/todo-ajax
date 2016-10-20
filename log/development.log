@@ -117,3 +117,15 @@ Processing by TodosController#index as JSON
 Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/todos.json" for ::1 at 2016-10-20 11:06:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as JSON
+  Rendering todos/index.json.jbuilder
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/_todo.json.jbuilder (1.5ms)
+  Rendered todos/_todo.json.jbuilder (0.3ms)
+  Rendered todos/_todo.json.jbuilder (0.4ms)
+  Rendered todos/index.json.jbuilder (17.5ms)
+Completed 200 OK in 43ms (Views: 23.1ms | ActiveRecord: 3.8ms)
+
+
