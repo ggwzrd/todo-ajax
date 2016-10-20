@@ -35,3 +35,97 @@ ORDER BY c.conname
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Meditate"], ["created_at", 2016-10-20 08:55:54 UTC], ["updated_at", 2016-10-20 08:55:54 UTC]]
   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/todos" for ::1 at 2016-10-20 10:57:24 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 387ms (Views: 369.1ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/todos/1" for ::1 at 2016-10-20 10:57:30 +0200
+Processing by TodosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"e9PbfBuyjho16HEHtH5ciqvPx3SAyAULKenDuEe0n9lVbVS2j3IRBc09pAx2BuEnOCLGVdEM2O13dacVI0zZHQ==", "id"=>"1"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/todos
+Completed 302 Found in 20ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/todos" for ::1 at 2016-10-20 10:57:30 +0200
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/todos" for ::1 at 2016-10-20 10:57:31 +0200
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos/new" for ::1 at 2016-10-20 10:57:33 +0200
+Processing by TodosController#new as HTML
+  Rendering todos/new.html.erb within layouts/application
+  Rendered todos/_form.html.erb (25.7ms)
+  Rendered todos/new.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 51ms (Views: 43.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/todos" for ::1 at 2016-10-20 10:57:37 +0200
+Processing by TodosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z25zZRN+CQ8gn585tBHZGwHbNZKZgrwJ6h0LnYOqAAvE/snqwU5th3ojhjxoNMxDafqj+CUNJ5xRiJyGwqcmIQ==", "todo"=>{"title"=>"Bla Bla", "completed"=>"0"}, "commit"=>"Create Todo"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "todos" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Bla Bla"], ["created_at", 2016-10-20 08:57:37 UTC], ["updated_at", 2016-10-20 08:57:37 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/todos/4
+Completed 302 Found in 13ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/todos/4" for ::1 at 2016-10-20 10:57:37 +0200
+Processing by TodosController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT  "todos".* FROM "todos" WHERE "todos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering todos/show.html.erb within layouts/application
+  Rendered todos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos" for ::1 at 2016-10-20 10:57:40 +0200
+Processing by TodosController#index as HTML
+  Rendering todos/index.html.erb within layouts/application
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/todos.json" for ::1 at 2016-10-20 10:59:45 +0200
+Processing by TodosController#index as JSON
+  Rendering todos/index.json.jbuilder
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/_todo.json.jbuilder (1.0ms)
+  Rendered todos/_todo.json.jbuilder (0.3ms)
+  Rendered todos/_todo.json.jbuilder (0.6ms)
+  Rendered todos/index.json.jbuilder (10.0ms)
+Completed 200 OK in 17ms (Views: 14.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/todos.json" for ::1 at 2016-10-20 11:06:01 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodosController#index as JSON
+  Rendering todos/index.json.jbuilder
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  Rendered todos/_todo.json.jbuilder (1.5ms)
+  Rendered todos/_todo.json.jbuilder (0.3ms)
+  Rendered todos/_todo.json.jbuilder (0.4ms)
+  Rendered todos/index.json.jbuilder (17.5ms)
+Completed 200 OK in 43ms (Views: 23.1ms | ActiveRecord: 3.8ms)
+
+
