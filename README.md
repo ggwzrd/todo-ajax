@@ -1,24 +1,21 @@
-# README
+# TODO AJAX
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="http://i.imgur.com/Nl9DNnb.png" width=600px />
 
-Things you may want to cover:
+## About
+This website has been made during the week 3 of the intensive course in Codaisseur.
 
-* Ruby version
+## What I learned
 
-* System dependencies
+1. Save and get data with AJAX post, get and put and patch request
+2. Update UI dynamically with jQuery
 
-* Configuration
+## Get Started
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Install [RVM](https://rvm.io/rvm/install)
+2. Install [Rails](http://installrails.com/steps/choose_os)
+3. Copy content from [this repository](https://gist.github.com/hezus/1834978f7aa8a576d866e59fd0ad7c72)
+4. ``` rails db:drop ```
+5. ``` rails db:create ```
+6. ``` rails db:migrate ```
+7. ``` rails db:seed ```
